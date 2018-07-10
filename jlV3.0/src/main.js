@@ -6,6 +6,7 @@ import router from './router'
 import WeVue from 'we-vue'
 import 'we-vue/lib/style.css'
 
+import '@/assets/iconfont/iconfont.css'
 Vue.config.productionTip = false
 Vue.use(WeVue)
 /* eslint-disable no-new */

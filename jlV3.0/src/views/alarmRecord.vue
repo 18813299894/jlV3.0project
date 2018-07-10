@@ -1,5 +1,5 @@
 <style csoped>
-.inspectionRecord{
+.alarmRecord{
   box-sizing: border-box;
   width: 100%;
   height: 100%;
@@ -7,13 +7,13 @@
   background: #f5f5f5;
   padding-top: 64px;
 }
-.inspectionRecord .searchBar{
+.alarmRecord .searchBar{
   width: 100%;
   height: 44px;
   border-bottom: 1px solid #D9D9D9;
-  position:relative;
+  position: relative;
 }
-.inspectionRecord .searchBar .searchArea{
+.alarmRecord .searchBar .searchArea{
   width: 95%;
   height: 26px;
   background: #FFF;
@@ -32,7 +32,7 @@ input::-webkit-input-placeholder
   color: #9F9F9F;
   text-align: center;
 }
-/* --------------- */
+/* ------删除按钮--------- */
 .cancelIcon_1{
   display: block;
   width: 16px;
@@ -59,7 +59,7 @@ input::-webkit-input-placeholder
 }
 .records .recordMsg h3{
   font-size: 17px;
-  color:#000;
+  color: #000000;
   line-height: 24px;
   font-weight: normal;
 }
@@ -70,7 +70,7 @@ input::-webkit-input-placeholder
 }
 </style>
 <template>
-  <div class="inspectionRecord">
+  <div class="alarmRecord">
     <div class="searchBar">
       <input class="searchArea iconfont" @input="change()" type="text" :placeholder="icon" v-model="value">
       <i  v-show="iconShow" class="cancelIcon_1" @click="clearText()"></i>
@@ -78,16 +78,16 @@ input::-webkit-input-placeholder
     <div class="records">
       <div class="recordMsg">
         <h3>危险源：海龙四期上料车间</h3>
-        <p style="margin-top: 4px;">巡检时间：2018-05-12 17:23:35</p>
-        <p style="margin-bottom: 8px;">巡检人：张三</p>
+        <p style="margin-top: 4px;">报警时间：2018-05-12 17:23:35</p>
+        <p style="margin-bottom: 8px;">未查次数：2</p>
       </div>
       <p style="font-size: 14px;color: #9B9B9B;line-height: 24px;margin-top: 10px;">所属分类：原料上料车间</p>
     </div>
     <div class="records" style="margin-top: 20px">
       <div class="recordMsg">
         <h3>危险源：海龙四期上料车间</h3>
-        <p style="margin-top: 4px;">巡检时间：2018-05-12 17:23:35</p>
-        <p style="margin-bottom: 8px;">巡检人：张三</p>
+        <p style="margin-top: 4px;">报警时间：2018-05-12 17:23:35</p>
+        <p style="margin-bottom: 8px;">未查次数：2</p>
       </div>
       <p style="font-size: 14px;color: #9B9B9B;line-height: 24px;margin-top: 10px;">所属分类：原料上料车间</p>
     </div>
@@ -95,7 +95,7 @@ input::-webkit-input-placeholder
 </template>
 <script>
 export default{
-  name: 'inspectionRecord',
+  name: 'alarmRecord',
   data () {
     return {
       icon: '\ue600 搜索',

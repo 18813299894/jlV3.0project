@@ -1,22 +1,23 @@
 <style scoped>
 .scavenging{
   box-sizing:border-box;
-  width: 414px;
+  width: 100%;
   height: 100%;
+  position: fixed;
   background: #f5f5f5;
   padding-top: 64px;
+  overflow: scroll;
 }
 .addressPart{
-  width: 414px;
+  width: 100%;
   height: 46px;
   border-top: 1px solid #E4E4E4;
   border-bottom: 1px solid #E4E4E4;
   background: #FAFAFA;
 }
 .addressPart .address{
-  display: block;
   float: left;
-  width: 298px;
+  width: 75%;
   height: 48px;
   line-height: 48px;
   font-size: 17px;
@@ -24,18 +25,17 @@
   text-align: right;
 }
 .addressPart a{
-  display: block;
   float: left;
-  width: 100px;
+  width: 25%;
   height: 48px;
   line-height: 48px;
   font-size: 14px;
   color: #467DB9;
-  text-align: right;
+  text-align: center;
 }
 /* --------单选框样式------------ */
 .checkBox{
-  width: 414px;
+  width: 100%;
   height: 86px;
   background: #fff;
   border-bottom: 1px solid #EAEAEA;
@@ -63,7 +63,7 @@
   margin-top: -20px;
 }
 .textArea .weui-cells .textAreaSize{
-  width: 414px;
+  width: 100%;
   height: 86px;
   box-sizing:border-box;
 }
@@ -71,8 +71,8 @@
   border-bottom: 1px solid #EAEAEA;
 }
 .weui-cell__bd .weui-textarea{
+  width: 100%;
   height: 86px;
-  width: 414px;
   font-size: 17px;
   color: #B2B2B2;
   line-height: 24px;
@@ -80,7 +80,7 @@
 /* ----------------- */
 .addPicture{
   box-sizing: border-box;
-  width: 414px;
+  width: 100%;
   height: 131px;
   background: #fff;
   margin-top: 20px;
@@ -140,7 +140,7 @@
 }
 /* 按钮样式 */
 .weui-btn_primary{
-  width: 384px !important;
+  width: 90%!important;
   height: 46px;
   background: #2F7DCD;
   border-radius: 5px;

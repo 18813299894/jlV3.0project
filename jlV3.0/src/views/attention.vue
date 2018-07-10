@@ -1,14 +1,15 @@
 <style>
 .attention{
   box-sizing:border-box;
-  width: 414px;
-  height: 736px;
   background: #f5f5f5;
+  height: 100%;
+  width: 100%;
+  position: fixed;
   padding-top: 64px;
 }
 .textPart{
   box-sizing:border-box;
-  width: 414px;
+  width: 100%;
   margin-top: 20px;
   padding:0 30px;
   text-align: left;

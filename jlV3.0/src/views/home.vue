@@ -1,48 +1,12 @@
-<template>
-  <div class="home">
-    <footer class="footNav">
-      <div class="keyboardIcon"><img style="display:block;width:40px;height: 40px;margin:6px 0 0 4px" src="./../assets/keyboard.png" /></div>
-      <div class="checkItem">
-        <img src="./../assets/listIcon1.png" style="display: inline-block;width: 15px;height: 15px;margin-bottom: -2px;"/>
-        <p style="display: inline-block;">巡检操作</p>
-        <div class="pullUpmenu">
-          <a href="/#/recoveryPage">扫一扫</a>
-          <div class="line" style="margin:0"></div>
-          <a href="/#/attentionPage">输巡检码</a>
-          <div class="triangle-facing-right"></div>
-        </div>
-      </div>
-      <div class="checkItem">
-        <p>巡检查询</p>
-      </div>
-      <div class="checkItem">
-        <img src="./../assets/listIcon1.png" style="display: inline-block;width: 15px;height: 15px;margin-bottom: -2px;"/>
-        <p style="display: inline-block;">我的</p>
-        <div class="pullUpmenu">
-          <a href="">报警记录</a>
-          <div class="line" style="margin:0"></div>
-          <a href="">巡查记录</a>
-          <div class="triangle-facing-right"></div>
-        </div>
-      </div>
-    </footer>
-  </div>
-</template>
-<script>
-export default{
-  data () {
-
-  }
-}
-</script>
 <style scoped>
 .home{
-  width:414px;
-  height:736px;
+  width:100%;
+  height:100%;
+  position: fixed;
   background:#F5F5F5;
 }
 .footNav{
-  width:414px;
+  width:100%;
   height:52px;
   position:fixed;
   bottom:0;
@@ -107,3 +71,40 @@ export default{
   left:57px;
 }
 </style>
+<template>
+  <div class="home">
+    <footer class="footNav">
+      <div class="keyboardIcon"><img style="display:block;width:40px;height: 40px;margin:6px 0 0 4px" src="./../assets/keyboard.png" /></div>
+      <div class="checkItem">
+        <img src="./../assets/listIcon1.png" style="display: inline-block;width: 15px;height: 15px;margin-bottom: -2px;"/>
+        <p style="display: inline-block;">巡检操作</p>
+        <div class="pullUpmenu">
+          <a href="/#/recoveryPage">扫一扫</a>
+          <div class="line" style="margin:0"></div>
+          <a href="/#/attentionPage">输巡检码</a>
+          <div class="triangle-facing-right"></div>
+        </div>
+      </div>
+      <div class="checkItem">
+        <p>巡检查询</p>
+      </div>
+      <div class="checkItem">
+        <img src="./../assets/listIcon1.png" style="display: inline-block;width: 15px;height: 15px;margin-bottom: -2px;"/>
+        <p style="display: inline-block;">我的</p>
+        <div class="pullUpmenu">
+          <a href="">报警记录</a>
+          <div class="line" style="margin:0"></div>
+          <a href="">巡查记录</a>
+          <div class="triangle-facing-right"></div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</template>
+<script>
+export default{
+  data () {
+
+  }
+}
+</script>

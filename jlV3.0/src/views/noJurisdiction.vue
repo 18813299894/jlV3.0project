@@ -12,8 +12,9 @@
 <style scoped>
 .noJurisdiction{
   box-sizing: border-box;
-  width: 414px;
-  height:736px;
+  width: 100%;
+  height:100%;
+  position:fixed;
   background:#f5f5f5;
   padding-top: 64px;
 }
