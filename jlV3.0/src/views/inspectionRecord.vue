@@ -1,49 +1,14 @@
-<style csoped>
+<style lang="less">
 .inspectionRecord{
-  box-sizing: border-box;
-  width: 100%;
-  height: 100%;
-  position: fixed;
+}
+.weui-search-bar{
   background: #f5f5f5;
-  padding-top: 64px;
-}
-.inspectionRecord .searchBar{
-  width: 100%;
   height: 44px;
-  border-bottom: 1px solid #D9D9D9;
-  position:relative;
 }
-.inspectionRecord .searchBar .searchArea{
-  width: 95%;
-  height: 26px;
-  background: #FFF;
-  margin-top: 8px;
-  border: 1px solid #D7DADE;
-  border-radius: 2px;
-}
-/* placeholder居中显示 */
-input::-ms-input-placeholder
-{
-  color: #9F9F9F;
-  text-align: center;
-}
-input::-webkit-input-placeholder
-{
-  color: #9F9F9F;
-  text-align: center;
-}
-/* --------------- */
-.cancelIcon_1{
-  display: block;
-  width: 16px;
-  height: 16px;
-  background: #fff;
-  border-radius: 8px;
-  background-image: url(./../assets/cancel3.png);
-  background-size: 16px 16px;
-  position: absolute;
-  top: 14px;
-  right: 5%;
+.weui-search-bar .weui-search-bar__form span{
+  line-height: 22px;
+  margin-top: -3px;
+  margin-left: -5px;
 }
 /* -------------------- */
 .records{
@@ -56,40 +21,37 @@ input::-webkit-input-placeholder
 }
 .records .recordMsg{
   border-bottom:1px solid #F3F3F3;
-}
-.records .recordMsg h3{
-  font-size: 17px;
-  color:#000;
-  line-height: 24px;
-  font-weight: normal;
-}
-.records .recordMsg p{
-  font-size: 14px;
-  color: #9B9B9B;
-  line-height: 22px;
+  h3{
+    font-size: 17px;
+    color:#000;
+    line-height: 24px;
+    font-weight: normal;
+  }
+  p{
+    font-size: 14px;
+    color: #9B9B9B;
+    line-height: 22px;
+  }
 }
 </style>
 <template>
-  <div class="inspectionRecord">
-    <div class="searchBar">
-      <input class="searchArea iconfont" @input="change()" type="text" :placeholder="icon" v-model="value">
-      <i  v-show="iconShow" class="cancelIcon_1" @click="clearText()"></i>
-    </div>
+  <div class="inspectionRecord container">
+    <wv-search-bar :autofocus="false" v-model="value" :result="filterResult"></wv-search-bar>
     <div class="records">
       <div class="recordMsg">
         <h3>危险源：海龙四期上料车间</h3>
-        <p style="margin-top: 4px;">巡检时间：2018-05-12 17:23:35</p>
-        <p style="margin-bottom: 8px;">巡检人：张三</p>
+        <p class="mt4">巡检时间：2018-05-12 17:23:35</p>
+        <p class="mb8">巡检人：张三</p>
       </div>
-      <p style="font-size: 14px;color: #9B9B9B;line-height: 24px;margin-top: 10px;">所属分类：原料上料车间</p>
+      <p class="fz14 c_9B9B9B lh24 mt10">所属分类：原料上料车间</p>
     </div>
-    <div class="records" style="margin-top: 20px">
+    <div class="records mt20">
       <div class="recordMsg">
         <h3>危险源：海龙四期上料车间</h3>
-        <p style="margin-top: 4px;">巡检时间：2018-05-12 17:23:35</p>
-        <p style="margin-bottom: 8px;">巡检人：张三</p>
+        <p class="mt4">巡检时间：2018-05-12 17:23:35</p>
+        <p class="mb8">巡检人：张三</p>
       </div>
-      <p style="font-size: 14px;color: #9B9B9B;line-height: 24px;margin-top: 10px;">所属分类：原料上料车间</p>
+      <p class="fz14 c_9B9B9B lh24 mt10">所属分类：原料上料车间</p>
     </div>
   </div>
 </template>
@@ -98,22 +60,32 @@ export default{
   name: 'inspectionRecord',
   data () {
     return {
-      icon: '\ue600 搜索',
-      iconShow: false,
-      value: ''
+      value: '',
+      defaultResult: [
+        'Apple',
+        'Banana',
+        'Orange',
+        'Durian',
+        'Lemon',
+        'Peach',
+        'Cherry',
+        'Berry',
+        'Core',
+        'Fig',
+        'Haw',
+        'Melon',
+        'Plum',
+        'Pear',
+        'Peanut',
+        'Other'
+      ]
     }
   },
   methods: {
-    change () {
-      if (this.value === '') {
-        this.iconShow = false
-      } else {
-        this.iconShow = true
-      }
-    },
-    clearText () {
-      this.value = ''
-      this.iconShow = false
+  },
+  computed: {
+    filterResult () {
+      return this.defaultResult.filter(value => new RegExp(this.value, 'i').test(value))
     }
   }
 }

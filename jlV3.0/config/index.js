@@ -10,7 +10,18 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+        '/index.php': {
+          target: 'http://wx.jl.order.3ruler.com',
+          changeOrigin: true,
+          pathRewrite: {
+            '^/index.php': '/index.php'
+          },
+          cookieDomainRewrite: {
+            '*': ''
+          }
+        }
+    },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST

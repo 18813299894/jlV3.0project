@@ -5,8 +5,13 @@ import App from './App'
 import router from './router'
 import WeVue from 'we-vue'
 import 'we-vue/lib/style.css'
+import axios from 'axios'
 
-import '@/assets/iconfont/iconfont.css'
+import './common/css/color.less'
+import './common/css/common.less'
+import './common/css/font.less'
+
+Vue.prototype.$http = axios
 Vue.config.productionTip = false
 Vue.use(WeVue)
 /* eslint-disable no-new */

@@ -1,18 +1,6 @@
-<style scoped>
+<style scoped lang="less">
 .success{
-  box-sizing:border-box;
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  background: #f5f5f5;
-  padding-top: 64px;
-}
-.success{
-  padding-top: 66px;
   text-align:center;
-}
-.btnStyle{
-  margin-top: 30px;
 }
 /* ------按钮样式----- */
 .weui-btn_primary{
@@ -26,12 +14,10 @@
 }
 </style>
 <template>
-  <div class="success">
-    <div class="success pageStyle">
+  <div class="success container">
     <wv-icon type="success" :large="true" style="margin-top: 66px;"></wv-icon>
     <h2 style="font-weight: normal;font-size: 20px;margin-top: 30px">提交成功</h2>
-    <wv-button type="primary" class="btnStyle">确定</wv-button>
-  </div>
+    <wv-button type="primary" class="btnStyle mt30">确定</wv-button>
   </div>
 </template>
 <script>

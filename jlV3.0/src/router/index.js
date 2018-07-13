@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
-import home from '@/views/home'
 import noJurisdiction from '@/views/noJurisdiction'
 import inspectionCode from '@/views/inspectionCode'
 import success from '@/views/success'
@@ -16,6 +15,8 @@ import noRecord from '@/views/noRecord'
 import inquiries from '@/views/inquiries'
 import resultList from '@/views/resultList'
 import resultDetails from '@/views/resultDetails'
+import list from '@/views/list'
+import test from '@/views/test'
 Vue.use(Router)
 
 export default new Router({
@@ -24,11 +25,6 @@ export default new Router({
       path: '/',
       name: 'HelloWorld',
       component: HelloWorld
-    },
-    {
-      path: '/home',
-      name: 'home',
-      component: home
     },
     {
       path: '/noJurisdiction',
@@ -99,6 +95,16 @@ export default new Router({
       path: '/resultDetails',
       name: 'resultDetails',
       component: resultDetails
+    },
+    {
+      path: '/list',
+      name: 'list',
+      component: list
+    },
+    {
+      path: '/test',
+      name: 'test',
+      component: test
     }
   ]
 })

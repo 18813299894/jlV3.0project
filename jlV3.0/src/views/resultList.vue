@@ -1,62 +1,71 @@
-<style scoped>
+<style scoped lang="less">
 .resultList{
-  box-sizing: border-box;
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  background: #f5f5f5;
-  padding-top: 64px;
 }
 .records{
-  box-sizing: border-box;
   width: 100%;
-  background: #fff;
   padding: 15px 15px 10px 15px;
   text-align: left;
-  margin-top: 20px;
 }
 .records .recordMsg{
   border-bottom:1px solid #F3F3F3;
-}
-.records .recordMsg h3{
-  font-size: 17px;
-  color: #000;
-  line-height: 24px;
-  font-weight: normal;
-}
-.records .recordMsg p{
-  font-size: 14px;
-  color: #9B9B9B;
-  line-height: 22px;
+  h3{
+    font-size: 17px;
+    color: #000;
+    line-height: 24px;
+    font-weight: normal;
+  }
+  p{
+    font-size: 14px;
+    color: #9B9B9B;
+    line-height: 22px;
+  }
 }
 </style>
 <template>
-  <div class="resultList">
-    <div class="records">
+  <div class="resultList container">
+    <div class="records bs bg_fff mt20">
       <div class="recordMsg">
         <h3>危险源：海龙四期上料车间</h3>
-        <p style="margin-top: 4px;">巡检时间：2018-05-12 17:23:35</p>
-        <p style="margin-bottom: 8px;">巡检人：张三</p>
+        <p class="mt4">巡检时间：2018-05-12 17:23:35</p>
+        <p class="mb8">巡检人：张三</p>
       </div>
       <p style="font-size: 14px;color: #9B9B9B;line-height: 24px;margin-top: 10px;">所属分类：原料上料车间</p>
     </div>
-    <div class="records">
+    <div class="records bs bg_fff mt20">
       <div class="recordMsg">
         <h3>危险源：海龙四期上料车间</h3>
-        <p style="margin-top: 4px;">巡检时间：2018-05-12 17:23:35</p>
-        <p style="margin-bottom: 8px;">巡检人：张三</p>
+        <p class="mt4">巡检时间：2018-05-12 17:23:35</p>
+        <p class="mb8">巡检人：张三</p>
       </div>
       <p style="font-size: 14px;color: #9B9B9B;line-height: 24px;margin-top: 10px;">所属分类：原料上料车间</p>
     </div>
-    <div class="records">
+    <div class="records bs bg_fff mt20">
       <div class="recordMsg">
         <h3>危险源：海龙四期上料车间</h3>
-        <p style="margin-top: 4px;">巡检时间：2018-05-12 17:23:35</p>
-        <p style="margin-bottom: 8px;">巡检人：张三</p>
+        <p class="mt4">巡检时间：2018-05-12 17:23:35</p>
+        <p class="mb8">巡检人：张三</p>
       </div>
       <p style="font-size: 14px;color: #9B9B9B;line-height: 24px;margin-top: 10px;">所属分类：原料上料车间</p>
     </div>
   </div>
 </template>
 <script>
+export default{
+  date () {
+    return {
+    }
+  },
+  created () {
+    this.$http.post('/index.php?model=jlsafe&m=alarm&a=index&cmd=100&test=9135461', {
+      'data': {'search': 3, 'page': 1, 'page_size': 10}
+    }).then(function (res) {
+      console.log(res)
+    }).catch(function (err) {
+      console.log(err)
+    })
+  },
+  methods: {
+  }
+
+}
 </script>

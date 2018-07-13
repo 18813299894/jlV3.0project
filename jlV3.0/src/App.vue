@@ -9,8 +9,7 @@ export default {
   name: 'App'
 }
 </script>
-
-<style>
+<style scoped lang="less">
 #app {
   font-family: PingFangSC-Medium;
   -webkit-font-smoothing: antialiased;

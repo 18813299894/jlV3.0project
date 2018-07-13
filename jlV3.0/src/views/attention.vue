@@ -1,11 +1,5 @@
-<style>
+<style lang="less">
 .attention{
-  box-sizing:border-box;
-  background: #f5f5f5;
-  height: 100%;
-  width: 100%;
-  position: fixed;
-  padding-top: 64px;
 }
 .textPart{
   box-sizing:border-box;
@@ -13,18 +7,18 @@
   margin-top: 20px;
   padding:0 30px;
   text-align: left;
-}
-.textPart h3{
-  font-size: 17px;
-}
-.textPart p{
-  font-size: 14px;
-  color: #4A4A4A;
-  margin-top: 20px;
+  h3{
+    font-size: 17px;
+  }
+  p{
+    font-size: 14px;
+    color: #4A4A4A;
+    margin-top: 20px;
+  }
 }
 </style>
 <template>
-  <div class="attention">
+  <div class="attention container">
     <div class="textPart">
       <h3>巡检注意事项</h3>
       <p>1、巡检是必须要提交照片,已巡检点的二维码为背景,上传一到两张的清晰自拍照</p>

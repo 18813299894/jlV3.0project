@@ -1,3 +1,4 @@
+<!--
 <style lang="less">
 .weui-search-bar{
   background: #f5f5f5;
@@ -35,12 +36,12 @@
 <template>
   <div class="container">
     <wv-search-bar :autofocus="false" v-model="value" :result="filterResult"></wv-search-bar>
-    <div class="scroll os" v-infinite-scroll="loadMore" infinite-scroll-disabled="catIScroll" infinite-scroll-distance="50">
-      <div class="records bs bg_fff mb20" v-for="item in list" :key="item.alarm_send_id" @click="$router.push('/alarmDetails?id='+item.alarm_send_id)">
+    <div class="scroll os" v-infinite-scroll="loadMore" infinite-scroll-disabled="catIScroll" infinite-scroll-distance="10">
+      <div class="records bs bg_fff mb20" v-for="item in list" :key="item">
         <div class="recordMsg">
           <h3>危险源：{{item.danger_name}}</h3>
           <p class="mt4">报警时间：{{item.send_time}}</p>
-          <p class="mb8">未查次数：{{item.create_time}}</p>
+          <p class="mb8">未查次数：{{item.alarm_send_id}}</p>
         </div>
         <p class="fz14 c_9B9B9B lh24 mt10">所属分类：{{item.danger_type_name}}</p>
       </div>
@@ -96,11 +97,11 @@ export default{
       this.loading = true
       this.$http.post('/index.php?model=jlsafe&m=alarm&a=index&cmd=100&test=9135461', qs.stringify({data: JSON.stringify({search: '3', page: this.page, page_size: this.page_size})})).then(res => {
         this.loading = false
-        if (!res.data.info.data.length) {
+        /*if (!res.data.info.data.length) {
           this.loadend = true
         } else if (this.list.length >= res.data.info.data.length) {
           this.loadend = true
-        } else {
+        } else {*/
           var last = this.list.length
           var data = res.data.info.data
           /*
@@ -110,10 +111,19 @@ export default{
           }
           */
           for (var i = last; i < last + 10; i++) {
-            if (!data[i]) return false
-            this.list.push(data[i])
+            if (data[i]) {
+              this.list.push(data[i])
+            } else {
+              this.list.push({
+                alarm_send_id: '2',
+                create_time: '1',
+                danger_name: '锅炉漏水',
+                danger_type_name: '清水区危险源2',
+                send_time: '1531196009'
+              })
+            }
           }
-        }
+        //}
         /*
           for (var j = 0; j < 20; j++) {
           this.list.push({
@@ -144,3 +154,4 @@ export default{
   }
 }
 </script>
+-->

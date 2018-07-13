@@ -1,11 +1,5 @@
-<style scoped>
+<style scoped lang="less">
 .scavenging{
-  box-sizing:border-box;
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  background: #f5f5f5;
-  padding-top: 64px;
   overflow: scroll;
 }
 .addressPart{
@@ -14,42 +8,36 @@
   border-top: 1px solid #E4E4E4;
   border-bottom: 1px solid #E4E4E4;
   background: #FAFAFA;
-}
-.addressPart .address{
-  float: left;
-  width: 75%;
-  height: 48px;
-  line-height: 48px;
-  font-size: 17px;
-  color: #9B9B9B;
-  text-align: right;
-}
-.addressPart a{
-  float: left;
-  width: 25%;
-  height: 48px;
-  line-height: 48px;
-  font-size: 14px;
-  color: #467DB9;
-  text-align: center;
+  .address{
+    float: left;
+    width: 75%;
+    height: 48px;
+    line-height: 48px;
+    font-size: 17px;
+    color: #9B9B9B;
+    text-align: right;
+  }
+  a{
+    float: left;
+    width: 25%;
+    height: 48px;
+    line-height: 48px;
+    font-size: 14px;
+    color: #467DB9;
+    text-align: center;
+  }
 }
 /* --------单选框样式------------ */
 .checkBox{
   width: 100%;
   height: 86px;
-  background: #fff;
   border-bottom: 1px solid #EAEAEA;
   padding: 10px 0 0 15px;
-  box-sizing: border-box;
 }
 .selected:before{
   content: "\EA06";
-  background-color:#FFFFFF;
+  background-color:#FFF;
   color: #5685BB;
-}
-.checkBox .weui-cell__bd{
-  margin-top: 10px;
-  text-align: left;
 }
 .checkBox .weui-cell__bd span a:before{
   margin-left: 0;
@@ -65,7 +53,6 @@
 .textArea .weui-cells .textAreaSize{
   width: 100%;
   height: 86px;
-  box-sizing:border-box;
 }
 .textArea .weui-cells:after{
   border-bottom: 1px solid #EAEAEA;
@@ -98,32 +85,27 @@
   line-height: 20px;
   font-size: 10px;
 }
-.addPicture .picPart{
-  margin-top: 15px;
-}
 .addPicture .picPart ul{
   list-style: none;
   padding: 0;
-}
-.addPicture .picPart ul li{
-  float: left;
-  width: 50px;
-  height: 50px;
-  margin-right: 10px;
-}
-.addPicture .picPart ul li img{
-  width: 50px;
-  height: 50px;
+  li{
+    float: left;
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    img{
+      width: 50px;
+      height: 50px;
+    }
+  }
 }
 .addPicture .picPart .addIcon{
   display: inline-block;
   width: 50px;
   height: 50px;
   background: #E1E1E1;
-}
-.addPicture .picPart .addIcon img{
-  width: 40px;
-  margin:5px;
+  background:url(./../../static/image/camera.png) no-repeat center center;
+  background-size: 40px 40px;
 }
 /* 删除icon */
 .cancelIcon{
@@ -132,7 +114,7 @@
   height: 16px;
   background: #fff;
   border-radius: 8px;
-  background-image: url(./../assets/cancel.png);
+  background-image: url(./../../static/image/cancel.png);
   background-size: 16px 16px;
   position: relative;
   top: -58px;
@@ -155,71 +137,71 @@
 }
 </style>
 <template>
-  <div class="scavenging">
+  <div class="scavenging container">
     <div class="addressPart">
       <div class="address">
-        <img style="width:25px;height20px;margin-bottom: -3px" src="./../assets/address1.png"/>
+        <img style="width:25px;height20px;margin-bottom: -3px" src="./../../static/image/address1.png"/>
         <span>广东省东莞市麻涌镇</span>
       </div>
       <a href="">重新定位</a>
     </div>
-    <div class="checkBox">
+    <div class="checkBox bs bg_fff">
       <p style="text-align:left;font-size: 17px;line-height: 24px;">现场动火作业</p>
-      <div class="weui-cell__bd client-type">
+      <div class="weui-cell__bd client-type mt10 tl">
         <span class="normal" >
-          <a href="javascript:;" class="weui-icon-circle" data-type="1"></a>
+          <a href="" class="weui-icon-circle" data-type="1"></a>
           <span class="user-type">正常</span>
         </span>
         <span class="abnormal">
-          <a href="javascript:;" class="weui-icon-circle selected" data-type="2"></a>
+          <a href="" class="weui-icon-circle selected" data-type="2"></a>
           <span class="user-type">不正常</span>
         </span>
       </div>
     </div>
     <wv-group class="textArea">
-      <wv-textarea class="textAreaSize" placeholder="输入备注信息" :rows="3" :show-counter="false" v-model="content1"></wv-textarea>
+      <wv-textarea class="textAreaSize bs" placeholder="输入备注信息" :rows="3" :show-counter="false"></wv-textarea>
     </wv-group>
-    <div class="checkBox" style="margin-top:20px">
+    <div class="checkBox bs bg_fff mt20">
       <p style="text-align:left;font-size: 17px;line-height: 24px;">消防器材完好性</p>
-      <div class="weui-cell__bd client-type">
+      <div class="weui-cell__bd client-type mt10 tl">
         <span class="normal" >
-          <a href="javascript:;" class="weui-icon-circle selected" data-type="1"></a>
+          <a href="" class="weui-icon-circle selected" data-type="1"></a>
           <span class="user-type">正常</span>
         </span>
         <span class="abnormal">
-          <a href="javascript:;" class="weui-icon-circle" data-type="2"></a>
+          <a href="" class="weui-icon-circle" data-type="2"></a>
           <span class="user-type">不正常</span>
         </span>
       </div>
     </div>
-    <div class="checkBox" style="margin-top:20px">
+    <div class="checkBox bs bg_fff mt20">
       <p style="text-align:left;font-size: 17px;line-height: 24px;">该区域其他安全隐患</p>
-      <div class="weui-cell__bd client-type">
+      <div class="weui-cell__bd client-type mt10 tl">
         <span class="normal" >
-          <a href="javascript:;" class="weui-icon-circle" data-type="1"></a>
+          <a href="" class="weui-icon-circle" data-type="1"></a>
           <span class="user-type">无</span>
         </span>
         <span class="abnormal">
-          <a href="javascript:;" class="weui-icon-circle selected" data-type="2"></a>
+          <a href="" class="weui-icon-circle selected" data-type="2"></a>
           <span class="user-type">有</span>
         </span>
       </div>
     </div>
     <wv-group class="textArea">
-      <wv-textarea class="textAreaSize" placeholder="输入备注信息" :rows="3" :show-counter="false" v-model="content1"></wv-textarea>
+      <wv-textarea class="textAreaSize bs" placeholder="输入备注信息" :rows="3" :show-counter="false"></wv-textarea>
     </wv-group>
     <div class="addPicture">
       <p>图片<span>✱</span></p>
-      <div class="picPart">
+      <div class="picPart mt15">
         <ul>
-          <li><img src="./../assets/logo.png"/><i class="cancelIcon"></i></li>
-          <li><img src="./../assets/logo.png"/><i class="cancelIcon"></i></li>
+          <li><img src="./../../static/image/logo.png"/><i class="cancelIcon"></i></li>
+          <li><img src="./../../static/image/logo.png"/><i class="cancelIcon"></i></li>
         </ul>
-        <i class="addIcon"><img src="./../assets/camera.png"/></i>
+        <i class="addIcon"></i>
       </div>
     </div>
-    <wv-button type="primary" class="btnStyle" style="margin-top: 30px;margin-bottom: 20px">提交</wv-button>
-    <a class="attentionBtn" style="display:block;margin-bottom: 20px">巡检注意事项</a>
+    <wv-button type="primary" class="btnStyle mt30 mb20">提交</wv-button>
+    <a class="attentionBtn mb20" style="display:block;">巡检注意事项</a>
   </div>
 </template>
 <script>
